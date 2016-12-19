@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ITP分组信息调查</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>基本信息</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form id="form" action="submit" method="post">
+                  <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="numbers">学号</label>
+                    <input type="text" class="form-control" id="numbers" name="numbers" placeholder="Student ID">
+                  </div>
+                  <div class="form-group">
+                    <label for="majior">专业</label>
+                    <select id="majior-select" class="form-control">                    
+                      <option>理工科</option>
+                      <option>人文社科</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input type="radio" name="sexoption" id="sex1" value="option1"> 男
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="sexoption" id="sex2" value="option2"> 女
+                    </label>
+                  </div>
+                  <input type="hidden" id="majior" name="majior">
+                  <input type="hidden" id="sex" name="sex">
+                  <input type="hidden" id="character" name="character">
+
+                </form>
+              </div>
+            </div>           
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2>性格信息</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <p>注意：在每题的四个选项中选择一个最符合你自己的，请按第一印象最快选择，如果不能确定，可回忆童年时的情况，或者以你最熟悉的人对你的评价来从中选择。<p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>1.在同学眼中你是一位？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro1-options1" value="option1">
+                        A.积极、热情、有行动力的人
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro1-options2" value="option2">
+                        B.活泼、开朗、风趣幽默的人
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro1-options3" value="option3">
+                        C.忠诚、随和、容易相处的人
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro1-options4" value="option4">
+                        D.谨慎、冷静、注意细节的人
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>2.你喜欢看哪一类型的杂志？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro2-options1" value="option1">
+                        A.管理、财经、趋势类
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro2-options2" value="option2">
+                        B.旅游、美食、时尚类
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro2-options3" value="option3">
+                        C.心灵、散文、家庭类
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro2-options4" value="option4">
+                        D.科技、专业、艺术类
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>3.你做决策的方式？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro3-options1" value="option1">
+                        A.希望能立即有效
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro3-options2" value="option2">
+                        B.感觉重于一切
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro3-options3" value="option3">
+                        C.有时间考虑或寻求他人意见
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro3-options4" value="option4">
+                        D.要有详细的资料评估
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>4.职务上哪种工作是你最擅长的？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro4-options1" value="option1">
+                        A.以目标为导向，有不服输的精神
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro4-options2" value="option2">
+                        B.良好的口才，能主动的与人建立友善关系
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro4-options3" value="option3">
+                        C.能配合团队，扮演忠诚的拥护者
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro4-options4" value="option4">
+                        D.流程的掌握，注意到细节
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>5.当面对压力时，你会？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro5-options1" value="option1">
+                        A.用行动力去面对它，并且克服
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro5-options2" value="option2">
+                        B.希望找人倾吐，获得认同
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro5-options3" value="option3">
+                        C.逆来顺受，尽量避免冲突
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro5-options4" value="option4">
+                        D.重新思考缘由，必要时做精细的解说
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>6.与同学之间的相处</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro6-options1" value="option1">
+                        A.以公事为主，很少谈到个人生活
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro6-options2" value="option2">
+                        B.重视气氛，能够带动团队氛围
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro6-options3" value="option3">
+                        C.良好的倾听者，对人态度温和友善
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro6-options4" value="option4">
+                        D.被动，不会主动与人建立关系
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>7.你希望别人如何与你沟通？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro7-options1" value="option1">
+                        A.直接讲重点，不要拐弯抹角
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro7-options2" value="option2">
+                        B.轻松，不要太严肃
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro7-options3" value="option3">
+                        C.不要一次说太多，要给予明确的支持
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro7-options4" value="option4">
+                        D.凡事说清楚，讲明白
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>8.要完成一件事情时，你最在意的部分是？ </label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro8-options1" value="option1">
+                        A.效果是否有达到
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro8-options2" value="option2">
+                        B.过程是否快乐
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro8-options3" value="option3">
+                        C.前后是否有改变
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro8-options4" value="option4">
+                        D.流程是否正确
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>9.什么事情会让你恐惧？</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro9-options1" value="option1">
+                        A.呈现弱点，被人利用
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro9-options2" value="option2">
+                        B.失去认同，被人排挤
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro9-options3" value="option3">
+                        C.过度变动，让人无所适从
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro9-options4" value="option4">
+                        D.制度不清，标准不一
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <form>
+                  <div class="form-group">
+                    <label>10.哪些是你自觉的缺点</label>
+                    <div class="radio first-radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro10-options1" value="option1">
+                        A.缺乏耐心
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro10-options2" value="option2">
+                        B.缺乏细心
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro10-options3" value="option3">
+                        C.没有主见
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="optionsRadios" id="pro10-options4" value="option4">
+                        D.缺乏风趣
+                      </label>
+                    </div>
+                  </div>        
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-default btn-block" id="submit" type="submit">提交</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <!--my js-->
+      <script type="text/javascript" src="/javascripts/indexp.js"></script>
+    </body>
+    </html>

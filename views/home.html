@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title><%= title %></title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>后台管理</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <% if(status){ %>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="lead">欢迎您: <%= username %> </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="label label-info">登陆时间：<%= date %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3>信息列表</h3>
+              </div>
+            </div>
+            <% if(infolist.length) { %>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-hover span12">
+                  <thead>
+                    <tr>
+                      <th>选择</th>
+                      <th>姓名</th>
+                      <th>学号</th>
+                      <th>专业</th>
+                      <th>性别</th>
+                      <th>性格</th>
+                      <th>操作</th>
+                    </tr> 
+                  </thead>  
+                  <tbody>
+                    <% var i = 0; %>
+                    <% infolist.forEach(function(data){ %>
+                    <% i++; %>
+                    <% if(data.majior == 0)
+                          var majior = '理工科';
+                        else 
+                          if(data.majior == 1)
+                          var majior = '人文社科';
+                        else 
+                          var majior = '其他'
+                        if(data.sex == 0)
+                          var sex = '男';
+                        else 
+                          var sex = '女';
+                        switch (data.character){
+                          case 1 : var character = '支配型性格';break;
+                          case 2 : var character = '影响型性格';break;
+                          case 3 : var character = '支持型性格';break;
+                          case 4 : var character = '服从型性格';break;
+                        }
+                    %>
+                    <tr>
+                      <td><label><input type="checkbox" id='<%= i+'-checked' %>' aria-label="checked"></label></td>
+                      <td id='<%= 'infolist-'+i+'-id' %>' class="hidden" ><%= data.id %></td>
+                      <td id='<%= 'infolist-'+i+'-name' %>' ><%= data.name %></td>
+                      <td id='<%= 'infolist-'+i+'-numbers' %>' ><%= data.numbers %></td>
+                      <td id='<%= 'infolist-'+i+'-majior' %>' ><%= majior %></td>
+                      <td id='<%= 'infolist-'+i+'-sex' %>' ><%= sex %></td>
+                      <td id='<%= 'infolist-'+i+'-character' %>' ><%= character %></td>
+                      <td><button type="button" class="btn btn-danger btn-xs" id='<%= i+'-button' %>'>Delete</button></td>
+                    </tr>                  
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label>组数：</label>
+                    <input type="text" class="form-control" id="groupNum" placeholder="请输入数字">
+                  </div>
+                <button type="button" class="btn btn-default" id="start">计算</button>
+              </form>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="tabel hidden" id="result">
+                  <thead>
+                    <tr>
+                      <th>组号</th>
+                      <th>姓名</th>
+                      <th>学号</th>
+                      <th>专业</th>
+                      <th>性别</th>
+                      <th>性格</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          <label class="hidden" id="valueOFi"><%= i %></label>
+          <form class="hidden" id="form" action='delete' method='post'>
+            <input type="text" id="deleteID" name="deleteID">
+          </form>
+          <% } %>
+          <% } else{ %>
+          <strong>登录失败<a href="/">回首页</a></strong>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--my js-->
+    <script type="text/javascript" src="/javascripts/home.js"></script>
+  </body>
+  </html>
